@@ -8,11 +8,46 @@
      <title>KasirKita | Dashboard</title>
 
      <!-- CSS LINK -->
-     <link rel="stylesheet" href="./app/app.css">     
+     <link rel="stylesheet" href="./app/app.css">
+
+     <!-- TAILWINDCSS CDN -->
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body>
+<body class="bg-gray-200">
+     <!-- HEADER START-->
+     <header
+          class="bg-white z-[999] fixed top-0 left-0 right-0 sm:top-1 sm:left-1 sm:right-1 flex justify-start sm:justify-between items-center p-3 shadow-sm rounded-none sm:rounded-sm">
+          <!-- PART-1 -->
+          <div>
+               <h1 class="text-xl font-medium text-[var(--main)]">Kasir<span class="text-[var(--text)]">Kita</span>.
+               </h1>
+          </div>
 
+          <!-- PART-2 DESKTOP-->
+          <div
+               class="p-3 fixed bottom-0 left-0 right-0 sm:static bg-white sm:p-0 flex justify-between items-center gap-2">
+               <!-- NOTIFICATION -->
+               <div class="cursor-pointer">
+                    <i class="bi bi-bell text-gray-400"></i>
+               </div>
+               <!-- INPUT-SERACH -->
+               <div class="border border-gray-200 p-1 px-2 rounded-sm">
+                    <input class="focus:outline-0 text-[0.7rem] sm:text-[1rem]" type="text" placeholder="Search...">
+                    <i class="bi bi-search text-gray-400 text-[0.75rem] sm:text-[1rem]"></i>
+               </div>
+               <!-- PHOTO -->
+               <div class="w-[2rem] h-[2rem] rounded-full overflow-hidden cursor-pointer">
+                    <img src="./assets/avatar.webp" alt="">
+               </div>
+          </div>
+     </header>
+     <!-- HEADER END-->
+
+     <!-- IF SCREEN < 250 -->
+     <div class="blocked capitalize font-medium bg-gray-400 z-[99999] hidden fixed top-0 lef-0 right-0 bottom-0 p-3">
+          <h1>minimum screen 250 to above</h1>
+     </div>
 </body>
 
 </html>
