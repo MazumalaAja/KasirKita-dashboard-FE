@@ -12,6 +12,10 @@
      --text-dark:#fff;
 }
 
+/* ===== Hidden scroll ===== */
+*::-webkit-scrollbar {
+     display: none;
+}
 
 /* ===== BODY ===== */
 body {
@@ -19,14 +23,36 @@ body {
      color: var(--text) !important;
 }
 
+/* ===== active class ===== */
+.active {
+     left: 0%;
+}
+
+/* ===== table history transactions ===== */
+.table-data table td {
+     padding: 0.8rem 1.5rem;
+     border-bottom: 0.1rem solid #999;
+}
+
+.table-data {
+     overflow-x: scroll;
+}
+
+.table-body tr:nth-child(even) p {
+     background-color: rgb(144, 215, 38);
+}
+
 /* ===== MEDIA-QUERIES ===== */
+@media (max-width:768px) {
+     html {
+          font-size: 95%;
+     }
+}
 @media (max-width:249px) {
      .blocked {
           display: flex !important;
           justify-content: center;
      }
+
 }
 
-.active {
-     left: -200%;
-}

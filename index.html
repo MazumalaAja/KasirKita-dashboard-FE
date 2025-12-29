@@ -51,7 +51,7 @@
 
      <!-- SIDEBAR START -->
      <aside
-          class="bg-white z-[998] rounded-sm shadow-sm fixed left-0 bottom-0 top-[3.7rem] sm:top-[4.3rem] sm:bottom-1 sm:left-1 w-72 p-3 overflow-auto duration-300">
+          class="bg-white  z-[998] rounded-none sm:rounded-sm shadow-sm fixed left-[-200%] bottom-0 top-[3.7rem] sm:top-[4.3rem] sm:bottom-1 sm:left-1 w-72 p-3 overflow-auto duration-300 ">
           <nav>
                <ul class="space-y-2">
                     <li
@@ -85,6 +85,13 @@
                     <li
                          class="rounded-sm duration-[200ms] hover:bg-[var(--main)] hover:text-[var(--text-dark)] p-1.5 px-2.5">
                          <a href="" class="flex items-center gap-3">
+                              <i class="bi bi-cart"></i>
+                              <span>Cashier</span>
+                         </a>
+                    </li>
+                    <li
+                         class="rounded-sm duration-[200ms] hover:bg-[var(--main)] hover:text-[var(--text-dark)] p-1.5 px-2.5">
+                         <a href="" class="flex items-center gap-3">
                               <i class="bi bi-bar-chart"></i>
                               <span>Statistics</span>
                          </a>
@@ -100,6 +107,36 @@
           </nav>
      </aside>
      <!-- SIDEBAR END -->
+
+     <main
+          class="pb-[3rem] fixed z-[99] w-[calc(100%-1%)] sm:w-[calc(100%-19rem)] overflow-auto top-[3.8rem] sm:top-[4.3rem] right-1 bottom-1 bg-[salmon] bg-transparent p-3">
+          <div class="flex gap-3 items-center mb-2">
+               <i class="bi bi-house text-xl"></i>
+               <h3 class="text-xl font-medium">Dashboard</h3>
+          </div>
+          <div class="dashboard-item flex gap-3 flex-wrap mb-5">
+          </div>
+          <div class="flex gap-3 items-center mb-2">
+               <i class="bi bi-clock-history text-xl"></i>
+               <h3 class="text-xl font-medium">Transaction histories</h3>
+          </div>
+          <div class="table-data bg-white rounded-sm shadow-sm w-full mb-5 p-3">
+               <table class="w-full">
+                    <thead>
+                         <tr>
+                              <td class="font-medium">Id</td>
+                              <td class="font-medium">Date</td>
+                              <td class="font-medium">Customer</td>
+                              <td class="font-medium">Cashier</td>
+                              <td class="font-medium">Total Purchase</td>
+                              <td class="font-medium">Payment method</td>
+                         </tr>
+                    </thead>
+                    <tbody class="table-body">
+                    </tbody>
+               </table>
+          </div>
+     </main>
 
      <!-- IF SCREEN < 250 -->
      <div class="blocked capitalize font-medium bg-gray-400 z-[99999] hidden fixed top-0 lef-0 right-0 bottom-0 p-3">
