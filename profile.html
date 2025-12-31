@@ -109,45 +109,98 @@
      <!-- SIDEBAR END -->
 
      <main
-          class="pb-[3rem] fixed z-[99] w-[calc(100%-1%)] sm:w-[calc(100%-19rem)] overflow-auto top-[3.8rem] sm:top-[4.3rem] right-1 bottom-1 bg-[salmon] bg-transparent p-3 space-y-5">
+          class=" text-[85%] md:text-[100%] pb-[30%] fixed z-[99] w-[calc(100%-1%)] sm:w-[calc(100%-19rem)] overflow-auto top-[3.8rem] sm:top-[4.3rem] right-1 bottom-1 bg-[salmon] bg-transparent p-0 sm:p-3 space-y-5">
           <div class="w-max mx-auto relative">
-               <img class="w-[15rem]  h-[15rem] rounded-full border-5 border-white shadow-md" src="./assets/avatar.webp"
-                    alt="">
+               <img class="w-[12rem] h-[12rem] sm:w-[15rem]  sm:h-[15rem] rounded-full border-5 border-white shadow-md"
+                    src="./assets/avatar.webp" alt="">
                <div
                     class="hover:bg-green-700 absolute bottom-2 right-2 rounded-full px-3 py-2 bg-green-500 cursor-pointer flex justify-center items-center text-white border-white border-3">
                     <i class="bi bi-camera text-3xl"></i>
                </div>
           </div>
           <div class="mx-auto text-center">
-               <h1 class="text-2xl font-medium">Muhammad Azumal Aulia</h1>
+               <h1 class="text-lg sm:text-2xl font-medium">Muhammad Azumal Aulia</h1>
                <span>Cashier / Employee</span>
           </div>
 
           <div
-               class="bg-white rounded-sm shadow-sm w-full h-full p-3 ring-2 ring-offset-3 ring-offset-gray-200 ring-white">
-               <div class="navigation border-b-2 border-gray-200 flex justify-between gap-3 p-3">
+               class="bg-white rounded-none sm:rounded-sm shadow-sm w-full p-0 sm:p-3 ring-0 ring-offset-0 sm:ring-2 sm:ring-offset-3 sm:ring-offset-gray-200 ring-white space-y-3">
+               <div class="navigation border-b-2 border-gray-200 flex justify-between flex-col lg:flex-row gap-3 p-3">
                     <button
-                         class="bg-indigo-500 ring-2 ring-indigo-500 ring-offset-2 hover:ring-2 hover:ring-offset-2 hover:ring-indigo-500 flex items-center gap-3 justify-center cursor-pointer text-white rounded-full hover:bg-indigo-500 flex-1 p-3 ">
+                         class="bg-indigo-500 ring-2 ring-indigo-500 ring-offset-2 hover:ring-2 hover:ring-offset-2 hover:ring-indigo-500 flex text-sm lg:text-md xl:text-lg items-center gap-3 justify-center cursor-pointer text-white rounded-full hover:bg-indigo-500 flex-1 p-3 ">
                          <i class="bi bi-person"></i>
                          <span>Personal Data</span>
                     </button>
                     <button
-                         class="bg-indigo-300 hover:ring-2 hover:ring-offset-2 hover:ring-indigo-500 cursor-pointer text-white rounded-full hover:bg-indigo-500 flex-1 p-3 ">
-                         <i class="bi bi-chart"></i>
+                         class="bg-indigo-300 hover:ring-2 hover:ring-offset-2 flex items-center gap-3 justify-center hover:ring-indigo-500 text-sm lg:text-md xl:text-lg cursor-pointer text-white rounded-full hover:bg-indigo-500 flex-1 p-3 ">
+                         <i class="bi bi-bar-chart"></i>
                          <span>Statistics</span>
                     </button>
                </div>
 
                <div>
-                    <form action="">
-                         <div>
-                              <i class="bi bi-person"></i>
-                              <input type="text" placeholder="Username..." value="Muhammad Azumal Aulia">
-                         </div>
-                         <div>
-                              <i class="bi bi-envelope"></i>
-                              <input type="text" placeholder="Email..." value="zumal@gmail.com">
-                         </div>
+                    <form action="" class="space-y-3">
+                         <fieldset class="flex items-center p-3 rounded-sm border-2 border-gray-200 flex flex-col">
+                              <legend>Username</legend>
+                              <div class="flex w-full mb-3">
+                                   <i class=" text-white bi bi-person bg-indigo-300 text-xl p-1 px-2 rounded-s-sm"></i>
+                                   <input
+                                        class="text-sm lg:text-md flex-1 border-2 border-indigo-300 rounded-e-sm px-2 focus:outline-none"
+                                        type="text" placeholder="Username..." value="Muhammad Azumal Aulia">
+                              </div>
+
+                              <div class="flex justify-end w-full gap-2">
+                                   <button
+                                        class="px-2.5 hover:ring-2 hover:ring-offset-2 hover:ring-green-700 p-1.5 bg-green-500 text-white rounded-sm hover:bg-green-700 cursor-pointer">Edit</button>
+                                   <button
+                                        class="px-2.5 p-1.5 bg-gray-300 text-white rounded-sm cursor-not-allowed">Save</button>
+                              </div>
+                         </fieldset>
+                         <fieldset class="flex items-center p-3 rounded-sm border-2 border-gray-200 flex flex-col">
+                              <legend>Email</legend>
+                              <div class="flex w-full mb-3">
+                                   <i class="text-white bi bi-envelope bg-indigo-300 text-xl p-1 px-2 rounded-s-sm"></i>
+                                   <input
+                                        class="text-sm lg:text-md flex-1 border-2 border-indigo-300 rounded-e-sm px-2 focus:outline-none"
+                                        type="email" placeholder="Email..." value="mazumala@gmail.com">
+                              </div>
+
+                              <div class="flex justify-end w-full gap-2">
+                                   <button
+                                        class="px-2.5 hover:ring-2 hover:ring-offset-2 hover:ring-green-700 p-1.5 bg-green-500 text-white rounded-sm hover:bg-green-700 cursor-pointer">Edit</button>
+                                   <button
+                                        class="px-2.5 p-1.5 bg-gray-300 text-white rounded-sm cursor-not-allowed">Save</button>
+                              </div>
+                         </fieldset>
+                         <fieldset class="flex items-center p-3 rounded-sm border-2 border-gray-200 flex flex-col">
+                              <legend>Password</legend>
+                              <div class="flex w-full mb-3">
+                                   <i class="text-white bi bi-lock bg-indigo-300 text-xl p-1 px-2 rounded-s-sm"></i>
+                                   <input
+                                        class="text-sm lg:text-md flex-1 border-2 border-indigo-300 rounded-e-sm px-2 focus:outline-none"
+                                        type="email" placeholder="Old password...">
+                              </div>
+                              <div class="flex w-full mb-3">
+                                   <i class="text-white bi bi-lock bg-indigo-300 text-xl p-1 px-2 rounded-s-sm"></i>
+                                   <input
+                                        class="text-sm lg:text-md flex-1 border-2 border-indigo-300 rounded-e-sm px-2 focus:outline-none"
+                                        type="email" placeholder="New password...">
+                              </div>
+
+                              <div class="flex w-full mb-3">
+                                   <i class="text-white bi bi-lock bg-indigo-300 text-xl p-1 px-2 rounded-s-sm"></i>
+                                   <input
+                                        class="text-sm lg:text-md flex-1 border-2 border-indigo-300 rounded-e-sm px-2 focus:outline-none"
+                                        type="email" placeholder="Password confirmation...">
+                              </div>
+
+                              <div class="flex justify-end w-full gap-2">
+                                   <button
+                                        class="px-2.5 hover:ring-2 hover:ring-offset-2 hover:ring-green-700 p-1.5 bg-green-500 text-white rounded-sm hover:bg-green-700 cursor-pointer">Edit</button>
+                                   <button
+                                        class="px-2.5 p-1.5 bg-gray-300 text-white rounded-sm cursor-not-allowed">Save</button>
+                              </div>
+                         </fieldset>
                     </form>
                </div>
           </div>
