@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <!-- VSCODE SETUP -->
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>KasirKita | Dashboard</title>
+
+     <!-- CSS LINK -->
+     <link rel="stylesheet" href="./app/app.css">
+
+     <!-- TAILWINDCSS CDN -->
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+     <style>
+          table th,
+          td {
+               padding: 0.5rem 2rem;
+               text-align: center;
+               border-bottom: 0.1rem solid #adadad;
+          }
+     </style>
+</head>
+
+<body class="bg-gray-200">
+     <!-- HEADER START-->
+     <header
+          class="bg-white z-[999] fixed top-0 left-0 right-0 sm:top-1 sm:left-1 sm:right-1 flex justify-between items-center p-3 shadow-sm rounded-none sm:rounded-sm">
+          <!-- PART-1 -->
+          <div>
+               <h1 class="text-xl font-medium text-[var(--main)]">Kasir<span class="text-[var(--text)]">Kita</span>.
+               </h1>
+          </div>
+
+          <!-- PART-2 DESKTOP-->
+          <div
+               class="p-3 fixed border border-gray-300 sm:border-0 bottom-0 left-0 right-0 sm:static bg-white sm:p-0 flex justify-between items-center gap-2">
+               <!-- NOTIFICATION -->
+               <div class="cursor-pointer">
+                    <i class="bi bi-bell text-gray-400"></i>
+               </div>
+               <!-- INPUT-SERACH -->
+               <div class="border-1 border-gray-200 p-1.5 px-2.5 rounded-sm">
+                    <input class="focus:outline-0 text-[0.8rem] sm:text-[1rem]" type="text" placeholder="Search...">
+                    <i class="bi bi-search text-gray-400 text-[0.75rem] sm:text-[1rem]"></i>
+               </div>
+               <!-- PHOTO -->
+               <div class="hidden sm:block w-[2rem] h-[2rem] rounded-full overflow-hidden cursor-pointer">
+                    <img src="./assets/avatar.webp" alt="">
+               </div>
+          </div>
+
+          <div id="toggle"
+               class="block active:scale-[95%] sm:hidden hover:bg-[#fbb13c] hover:text-[var(--text-dark)] rounded-sm px-1.5 cursor-pointer hover:ring-[var(--main)] hover:ring-offset-2 duration-[200ms] ring-1 hover:ring-1 text-2xl">
+               <i class="bi bi-list"></i>
+          </div>
+     </header>
+     <!-- HEADER END-->
+
+     <!-- SIDEBAR START -->
+     <aside
+          class="bg-white  z-[998] rounded-none sm:rounded-sm shadow-sm fixed left-[-200%] bottom-0 top-[3.7rem] sm:top-[4.3rem] sm:bottom-1 sm:left-1 w-72 p-3 overflow-auto duration-300 ">
+          <nav>
+               <ul class="space-y-2">
+                    <li
+                         class=" rounded-sm duration-[200ms] hover:bg-[var(--main)] hover:text-[var(--text-dark)] p-1.5 px-2.5">
+                         <a href="./index.html" class="flex items-center gap-3">
+                              <i class="bi bi-app-indicator"></i>
+                              <span>Dashboard</span>
+                         </a>
+                    </li>
+                    <li
+                         class=" rounded-sm duration-[200ms] hover:bg-[var(--main)] hover:text-[var(--text-dark)] p-1.5 px-2.5">
+                         <a href="./profile.html" class="flex items-center gap-3">
+                              <i class="bi bi-person"></i>
+                              <span>Profile</span>
+                         </a>
+                    </li>
+                    <li
+                         class="  bg-[var(--main)] text-[var(--text-dark)] rounded-sm duration-[200ms] hover:bg-[var(--main)] hover:text-[var(--text-dark)] p-1.5 px-2.5">
+                         <a href="./user-management.html" class="flex items-center gap-3">
+                              <i class="bi bi-people"></i>
+                              <span>Users Management</span>
+                         </a>
+                    </li>
+                    <li
+                         class="rounded-sm duration-[200ms] hover:bg-[var(--main)] hover:text-[var(--text-dark)] p-1.5 px-2.5">
+                         <a href="" class="flex items-center gap-3">
+                              <i class="bi bi-boxes"></i>
+                              <span>Products Management</span>
+                         </a>
+                    </li>
+                    <li
+                         class="rounded-sm duration-[200ms] hover:bg-[var(--main)] hover:text-[var(--text-dark)] p-1.5 px-2.5">
+                         <a href="" class="flex items-center gap-3">
+                              <i class="bi bi-cart"></i>
+                              <span>Cashier</span>
+                         </a>
+                    </li>
+                    <li
+                         class="rounded-sm duration-[200ms] hover:bg-[var(--main)] hover:text-[var(--text-dark)] p-1.5 px-2.5">
+                         <a href="" class="flex items-center gap-3">
+                              <i class="bi bi-bar-chart"></i>
+                              <span>Statistics</span>
+                         </a>
+                    </li>
+                    <li
+                         class="rounded-sm duration-[200ms] hover:bg-[var(--main)] hover:text-[var(--text-dark)] p-1.5 px-2.5">
+                         <a href="" class="flex items-center gap-3">
+                              <i class="bi bi-clock-history"></i>
+                              <span>Histories</span>
+                         </a>
+                    </li>
+               </ul>
+          </nav>
+     </aside>
+     <!-- SIDEBAR END -->
+
+     <main
+          class="text-[85%] md:text-[100%] pb-[30%] fixed z-99 w-[calc(100%-1%)] sm:w-[calc(100%-19rem)] overflow-auto top-[3.8rem] sm:top-[4.3rem] right-1 bottom-1 bg-transparent p-0 sm:p-3 space-y-5">
+          <button
+               class="bg-indigo-500 ring-2 ring-indigo-500 ring-offset-2 ring-offset-gray-200 hover:ring-indigo-600 hover:bg-indigo-600 text-white px-3 py-1.5 rounded-sm cursor-pointer">Add
+               User</button>
+          <div class=" bg-white p-3 rounded-sm shadow-sm">
+               <div class="flex justify-between">
+                    <select
+                         class="border-gray-300 border focus:outline-0 px-10 py-0.5 rounded-sm appearance-none text-center"
+                         name="" id="">
+                         <option class="" value="">10</option>
+                         <option class="" value="">25</option>
+                         <option class="" value="">50</option>
+                         <option class="" value="">100</option>
+                    </select>
+
+                    <div class="flex border border-gray-300 rounded-sm p-1 px-2">
+                         <input placeholder="Search..." class="focus:outline-0 text-sm" type="search" name="" id="">
+                         <i class="bi bi-search text-gray-400"></i>
+                    </div>
+               </div>
+               <table class="w-full">
+                    <thead>
+                         <tr>
+                              <th>
+                                   <input class="accent-indigo-600" type="checkbox" name="" id="">
+                              </th>
+                              <th class="font-medium">ID</th>
+                              <th class="font-medium">Username</th>
+                              <th class="font-medium">Email</th>
+                              <th class="font-medium">Role</th>
+                              <th class="font-medium">Phone number</th>
+                              <th class="font-medium">Actions</th>
+                         </tr>
+                    </thead>
+                    <tbody class="tbody">
+                    </tbody>
+               </table>
+          </div>
+
+          <div class="flex justify-center">
+               <div class="flex bg-white shadow-sm rounded-md">
+                    <a href="#"
+                         class="px-4 py-1.5 outline-1 outline-gray-200 hover:text-white hover:bg-[var(--main)] rounded-s-md">prev</a>
+                    <a href="#"
+                         class="px-4 py-1.5 outline-1 outline-gray-200 hover:text-white hover:bg-[var(--main)]">1</a>
+                    <a href="#"
+                         class="px-4 py-1.5 outline-1 outline-gray-200 hover:text-white hover:bg-[var(--main)]">2</a>
+                    <a href="#"
+                         class="px-4 py-1.5 outline-1 outline-gray-200 hover:text-white hover:bg-[var(--main)]">3</a>
+                    <a href="#"
+                         class="px-4 py-1.5 outline-1 outline-gray-200 hover:text-white hover:bg-[var(--main)]">4</a>
+                    <a href="#"
+                         class="px-4 py-1.5 outline-1 outline-gray-200 hover:text-white hover:bg-[var(--main)]">5</a>
+                    <a href="#"
+                         class="px-4 py-1.5 outline-1 outline-gray-200 hover:text-white hover:bg-[var(--main)] rounded-e-md">next</a>
+               </div>
+          </div>
+     </main>
+
+     <!-- IF SCREEN < 250 -->
+     <div class="blocked capitalize font-medium bg-gray-400 z-[99999] hidden fixed top-0 lef-0 right-0 bottom-0 p-3">
+          <h1>minimum screen 250 to above</h1>
+     </div>
+
+     <!-- MY SCRIPT -->
+     <script src="app/app.js"></script>
+
+     <!-- User Management -->
+     <script>
+          const tbody = document.querySelector("tbody");
+          let dataTables = [];
+          for (let i = 0; i <= 9; i++) {
+               dataTables[i] = {
+                    id: `00${i}${i}00`,
+                    name: `User ${i}`,
+                    email: `User${i}@gmail.com`,
+                    role: `${i % 3 == 0 ? "ADMIN" : "USER"}`,
+                    phone: `0812535985${i}`,
+               }
+          }
+
+          dataTables.forEach(i => {
+               tbody.innerHTML +=
+                    `<tr>
+                    <td>
+                         <input class="accent-indigo-600" type="checkbox" name="" id="">
+                    </td>
+                    <td>${i.id}</td>
+                    <td>${i.name}</td>
+                    <td>${i.email}</td>
+                    <td>${i.role}</td>
+                    <td>${i.phone}</td>
+                    <td>
+                         <button class="bg-red-500 hover:bg-red-600 text-white px-3 p-1 rounded-sm">Delete</button>
+                         <button class="bg-green-500 hover:bg-green-600 text-white px-3 p-1 rounded-sm">Edit</button>
+                         <button class="bg-amber-500 hover:bg-amber-600 text-white px-3 p-1 rounded-sm">Detail</button>
+                    </td>
+                </tr>`
+          });
+
+
+     </script>
+</body>
+
+</html>

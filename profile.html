@@ -70,7 +70,7 @@
                     </li>
                     <li
                          class="rounded-sm duration-[200ms] hover:bg-[var(--main)] hover:text-[var(--text-dark)] p-1.5 px-2.5">
-                         <a href="" class="flex items-center gap-3">
+                         <a href="./user-management.html" class="flex items-center gap-3">
                               <i class="bi bi-people"></i>
                               <span>Users Management</span>
                          </a>
@@ -206,9 +206,6 @@
 
                <div class="statistics hidden">
                     <div class="w-full overflow-auto">
-                         <div id="weeklyAttendanceChart" class="min-w-lg"></div>
-                    </div>
-                    <div class="w-full overflow-auto">
                          <div id="chart" class="min-w-lg"></div>
                     </div>
                </div>
@@ -265,40 +262,6 @@
 
      <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
      <script>
-          var weeklyOptions = {
-               chart: {
-                    type: 'bar',
-                    height: 300,
-                    stacked: true
-               },
-               series: [
-                    { name: 'Present', data: [5] },
-                    { name: 'Leave', data: [1] },
-                    { name: 'Sick', data: [1] },
-                    { name: 'Absent', data: [0] }
-               ],
-               xaxis: {
-                    categories: ['This Week']
-               },
-               colors: ['#00E396', '#FEB019', '#008FFB', '#FF4560'],
-               title: {
-                    text: 'Weekly Employee Attendance'
-               },
-               legend: {
-                    position: 'bottom'
-               },
-               tooltip: {
-                    y: {
-                         formatter: val => val + ' day(s)'
-                    }
-               }
-          }
-
-          new ApexCharts(
-               document.querySelector("#weeklyAttendanceChart"),
-               weeklyOptions
-          ).render()
-
           var options = {
                chart: {
                     type: 'bar',
