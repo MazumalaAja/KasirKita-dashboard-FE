@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <!-- VSCODE SETUP -->
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>KasirKita | Dashboard</title>
+
+     <!-- CSS LINK -->
+     <link rel="stylesheet" href="./app/app.css">
+
+     <!-- TAILWINDCSS CDN -->
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+     <style>
+          table th,
+          td {
+               padding: 0.5rem 2rem;
+               text-align: center;
+               border-bottom: 0.1rem solid #adadad;
+          }
+     </style>
+</head>
+
+<body class="bg-gray-200">
+     <!-- HEADER START-->
+     <header
+          class="bg-white z-[999] fixed top-0 left-0 right-0 sm:top-1 sm:left-1 sm:right-1 flex justify-between items-center p-3 shadow-sm rounded-none sm:rounded-sm">
+          <!-- PART-1 -->
+          <div>
+               <h1 class="text-xl font-medium text-[var(--main)]">Kasir<span class="text-[var(--text)]">Kita</span>.
+               </h1>
+          </div>
+
+          <!-- PART-2 DESKTOP-->
+          <div
+               class="p-3 fixed border border-gray-300 sm:border-0 bottom-0 left-0 right-0 sm:static bg-white sm:p-0 flex justify-between items-center gap-2">
+
+               <!-- Cart -->
+               <div class="toggle-cart cursor-pointer relative active:scale-90">
+                    <i class="bi bi-cart text-gray-400 text-xl"></i>
+                    <span class="absolute bg-red-500 text-white text-[0.5rem] px-1 rounded-full left-0">3</span>
+               </div>
+
+               <!-- NOTIFICATION -->
+               <div class="cursor-pointer">
+                    <i class="bi bi-bell text-xl text-gray-400"></i>
+               </div>
+
+               <!-- INPUT-SERACH -->
+               <div class="border-1 border-gray-200 p-1.5 px-2.5 rounded-sm">
+                    <input class="focus:outline-0 text-[0.8rem] sm:text-[1rem]" type="text" placeholder="Search...">
+                    <i class="bi bi-search text-gray-400 text-[0.75rem] sm:text-[1rem]"></i>
+               </div>
+               <!-- PHOTO -->
+               <div class="hidden sm:block w-[2rem] h-[2rem] rounded-full overflow-hidden cursor-pointer">
+                    <img src="./assets/avatar.webp" alt="">
+               </div>
+          </div>
+
+          <div id="toggle"
+               class="block active:scale-[95%] sm:hidden hover:bg-[#fbb13c] hover:text-[var(--text-dark)] rounded-sm px-1.5 cursor-pointer hover:ring-[var(--main)] hover:ring-offset-2 duration-[200ms] ring-1 hover:ring-1 text-2xl">
+               <i class="bi bi-list"></i>
+          </div>
+     </header>
+     <!-- HEADER END-->
+
+     <!-- SIDEBAR START -->
+     <aside
+          class="bg-white  z-[998] rounded-none sm:rounded-sm shadow-sm fixed left-[-200%] bottom-0 top-[3.7rem] sm:top-[4.3rem] sm:bottom-1 sm:left-1 w-full sm:w-72 p-3 overflow-auto duration-300 ">
+          <nav>
+               <ul class="space-y-2">
+                    <li
+                         class=" rounded-sm duration-[200ms] hover:bg-[var(--main)] hover:text-[var(--text-dark)] p-1.5 px-2.5">
+                         <a href="./index.html" class="flex items-center gap-3">
+                              <i class="bi bi-app-indicator"></i>
+                              <span>Dashboard</span>
+                         </a>
+                    </li>
+                    <li
+                         class=" rounded-sm duration-[200ms] hover:bg-[var(--main)] hover:text-[var(--text-dark)] p-1.5 px-2.5">
+                         <a href="./profile.html" class="flex items-center gap-3">
+                              <i class="bi bi-person"></i>
+                              <span>Profile</span>
+                         </a>
+                    </li>
+                    <li
+                         class="  rounded-sm duration-[200ms] hover:bg-[var(--main)] hover:text-[var(--text-dark)] p-1.5 px-2.5">
+                         <a href="./user-management.html" class="flex items-center gap-3">
+                              <i class="bi bi-people"></i>
+                              <span>Users Management</span>
+                         </a>
+                    </li>
+                    <li
+                         class="rounded-sm duration-[200ms] hover:bg-[var(--main)] hover:text-[var(--text-dark)] p-1.5 px-2.5">
+                         <a href="./products-management.html" class="flex items-center gap-3">
+                              <i class="bi bi-boxes"></i>
+                              <span>Products Management</span>
+                         </a>
+                    </li>
+                    <li
+                         class=" bg-[var(--main)] text-[var(--text-dark)] rounded-sm duration-[200ms] hover:bg-[var(--main)] hover:text-[var(--text-dark)] p-1.5 px-2.5">
+                         <a href="./cashier.html" class="flex items-center gap-3">
+                              <i class="bi bi-cart"></i>
+                              <span>Cashier</span>
+                         </a>
+                    </li>
+                    <li
+                         class="rounded-sm duration-[200ms] hover:bg-[var(--main)] hover:text-[var(--text-dark)] p-1.5 px-2.5">
+                         <a href="" class="flex items-center gap-3">
+                              <i class="bi bi-bar-chart"></i>
+                              <span>Statistics</span>
+                         </a>
+                    </li>
+                    <li
+                         class="rounded-sm duration-[200ms] hover:bg-[var(--main)] hover:text-[var(--text-dark)] p-1.5 px-2.5">
+                         <a href="" class="flex items-center gap-3">
+                              <i class="bi bi-clock-history"></i>
+                              <span>Histories</span>
+                         </a>
+                    </li>
+               </ul>
+          </nav>
+     </aside>
+     <!-- SIDEBAR END -->
+
+     <main
+          class="text-[85%] md:text-[100%] pb-[30%] fixed z-99 w-[calc(100%-1%)] sm:w-[calc(100%-19rem)] overflow-auto top-[3.8rem] sm:top-[4.3rem] right-1 bottom-1 bg-transparent p-2 sm:p-3 space-y-5 flex">
+
+          <div>
+               <div>
+                    <h1 class="text-2xl font-medium">All Products</h1>
+               </div>
+
+               <div>
+                    <div class="place-search flex justify-center shadow-sm rounded-s-md">
+                         <div class="flex-1 bg-white rounded-s-md border-r border-gray-300">
+                              <input type="search" placeholder="Serach product..."
+                                   class="w-full h-full px-3 focus:outline-0">
+                         </div>
+                         <select class="bg-white appearance-none px-3" name="" id="">
+                              <option value="">Categories</option>
+                              <option value="">Electronic</option>
+                              <option value="">Domestic</option>
+                         </select>
+                         <button
+                              class="bg-[var(--main)] hover:bg-[var(--main-dark)] px-3 p-1.5 rounded-e-md text-white">
+                              <i class="bi bi-search"></i>
+                              <span>Search</span>
+                         </button>
+                    </div>
+
+                    <div class="place flex justify-center gap-3 flex-wrap p-2">
+                    </div>
+               </div>
+
+               <div class="flex justify-center  pb-[35%]">
+                    <div class="flex flex-wrap justify-center">
+                         <a href="#"
+                              class="px-4 py-1.5 bg-white outline-1 outline-gray-200 hover:text-white hover:bg-[var(--main)] rounded-s-md">prev</a>
+                         <a href="#"
+                              class="px-4 py-1.5 bg-white outline-1 outline-gray-200 hover:text-white hover:bg-[var(--main)]">1</a>
+                         <a href="#"
+                              class="px-4 py-1.5 bg-white outline-1 outline-gray-200 hover:text-white hover:bg-[var(--main)]">2</a>
+                         <a href="#"
+                              class="px-4 py-1.5 bg-white outline-1 outline-gray-200 hover:text-white hover:bg-[var(--main)]">3</a>
+                         <a href="#"
+                              class="px-4 py-1.5 bg-white outline-1 outline-gray-200 hover:text-white hover:bg-[var(--main)]">4</a>
+                         <a href="#"
+                              class="px-4 py-1.5 bg-white outline-1 outline-gray-200 hover:text-white hover:bg-[var(--main)]">5</a>
+                         <a href="#"
+                              class="px-4 py-1.5 bg-white outline-1 outline-gray-200 hover:text-white hover:bg-[var(--main)] rounded-e-md">next</a>
+                    </div>
+               </div>
+
+          </div>
+
+          <div
+               class="place-cart duration-300 translate-x-[200%] fixed w-full sm:w-96 outline-gray-200 rounded-none sm:rounded-sm outline-2 bg-white top-[3.7rem] sm:top-[4.3rem]  bottom-1 right-0 sm:right-0">
+               <div class="bg-[var(--main)] text-center text-white">
+                    <div class="flex gap-3 justify-center p-2">
+                         <i class="bi bi-cart"></i>
+                         <h1>Cart</h1>
+                    </div>
+               </div>
+               <div class="relative overflow-auto h-screen">
+                    <div class="flex flex-col p-2 gap-2 pb-[50%] min-w-lg max-w-full">
+                         <div>
+                              <div class="flex justify-between text-sm border border-gray-300 px-3 p-2 rounded-sm">
+                                   <h3>Product 1</h3>
+                                   <h2>Rp 20.000</h2>
+                                   <h2>✖</h2>
+                                   <button class="bg-green-600 text-white px-1 flex rounded-sm cursor-pointer"><i
+                                             class="bi bi-plus"></i>
+                                   </button>
+                                   <h2>3</h2>
+                                   <button class="bg-red-500 text-white px-1 rounded-sm cursor-pointer"><i
+                                             class="bi bi-dash"></i>
+                                   </button>
+                                   <h2>=</h2>
+                                   <h2>Rp 60.000</h2>
+                              </div>
+                         </div>
+
+                         <div>
+                              <div class="flex justify-between text-sm border border-gray-300 px-3 p-2 rounded-sm">
+                                   <h3>Product 2</h3>
+                                   <h2>Rp 30.000</h2>
+                                   <h2>✖</h2>
+                                   <button class="bg-green-600 text-white px-1 flex rounded-sm cursor-pointer"><i
+                                             class="bi bi-plus"></i>
+                                   </button>
+                                   <h2>3</h2>
+                                   <button class="bg-red-500 text-white px-1 rounded-sm cursor-pointer"><i
+                                             class="bi bi-dash"></i>
+                                   </button>
+                                   <h2>=</h2>
+                                   <h2>Rp 90.000</h2>
+                              </div>
+                         </div>
+                         <div>
+                              <div class="flex justify-between text-sm border border-gray-300 px-3 p-2 rounded-sm">
+                                   <h3>Product 3</h3>
+                                   <h2>Rp 40.000</h2>
+                                   <h2>✖</h2>
+                                   <button class="bg-green-600 text-white px-1 flex rounded-sm cursor-pointer"><i
+                                             class="bi bi-plus"></i>
+                                   </button>
+                                   <h2>3</h2>
+                                   <button class="bg-red-500 text-white px-1 rounded-sm cursor-pointer"><i
+                                             class="bi bi-dash"></i>
+                                   </button>
+                                   <h2>=</h2>
+                                   <h2>Rp 120.000</h2>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+
+               <div
+                    class="absolute bg-white bottom-1 left-2 right-1 p-2 text-center font-medium rounded-md border-2 border-dashed border-gray-400">
+                    <h1>Total : Rp 200.000</h1>
+               </div>
+          </div>
+     </main>
+
+     <!-- IF SCREEN < 250 -->
+     <div class="blocked capitalize font-medium bg-gray-400 z-[99999] hidden fixed top-0 lef-0 right-0 bottom-0 p-3">
+          <h1>minimum screen 250 to above</h1>
+     </div>
+
+     <!-- action -->
+     <script>
+          let cart = document.querySelector(".place-cart");
+          let toggleCart = document.querySelector(".toggle-cart");
+          const toggle = document.querySelector("#toggle");
+          const sidebar = document.querySelector("aside");
+
+          toggle.addEventListener("click", () => {
+               if (!cart.classList.contains("translate-x-[200%]")) {
+                    cart.classList.add("translate-x-[200%]")
+                    sidebar.classList.toggle("active")
+               } else {
+                    sidebar.classList.toggle("active")
+               }
+          })
+
+
+          toggleCart.addEventListener("click", () => {
+               if (sidebar.classList.contains("active")) {
+                    sidebar.classList.remove("active");
+                    cart.classList.toggle("translate-x-[200%]")
+               } else {
+                    cart.classList.toggle("translate-x-[200%]")
+               }
+          })
+
+     </script>
+
+     <!-- Cashier -->
+     <script>
+          function Rupiah(data) {
+               return new Intl.NumberFormat("ID-id", { style: "currency", currency: "IDR", maximumFractionDigits: 0 }).format(data)
+          }
+          let place = document.querySelector(".place");
+          let dataTables = [];
+          for (let i = 0; i <= 25; i++) {
+               dataTables[i] = {
+                    id: `00${i}${i}00`,
+                    name: `Product ${i + 1}`,
+                    category: `${i % 2 === 0 ? "Electronic" : "Domestic"}`,
+                    hpp: `${Rupiah((i + 1) * 10000)}`,
+                    price: `${Rupiah((i + 2) * 10000)}`,
+                    stock: `${i + 12}`
+               }
+          }
+
+          dataTables.forEach(i => {
+               place.innerHTML +=
+                    ` <div class="bg-white p-3 rounded-md space-y-2 shadow-md">
+                         <div class="img w-[13rem] h-[13rem] bg-neutral-600 overflow-hidden rounded-md">
+                              <img class="w-full h-full" src="" alt="">
+                         </div>
+
+                         <div class="space-y-2">
+                              <div class="title">
+                                   <h1 class="text-lg font-medium mb-3">${i.name}</h1>
+                                   <h1 class="text-base text-gray-500 font-medium ">${i.price}</h1>
+                                   <p class=" text-sm">Stock : ${i.stock}</p>
+                              </div>
+
+                              <div class="cta">
+                                   <button
+                                        class="rounded-sm bg-[var(--main)] hover:bg-[var(--main-dark)] text-white flex gap-3 px-2 p-1">
+                                        <i class="bi bi-cart"></i>
+                                        <span>Add to cart</span>
+                                   </button>
+                              </div>
+                         </div>
+                    </div>`
+          });
+     </script>
+</body>
+
+</html>

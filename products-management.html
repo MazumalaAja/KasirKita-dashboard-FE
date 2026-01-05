@@ -78,14 +78,14 @@
                          </a>
                     </li>
                     <li
-                         class="  bg-[var(--main)] text-[var(--text-dark)] rounded-sm duration-[200ms] hover:bg-[var(--main)] hover:text-[var(--text-dark)] p-1.5 px-2.5">
+                         class="  rounded-sm duration-[200ms] hover:bg-[var(--main)] hover:text-[var(--text-dark)] p-1.5 px-2.5">
                          <a href="./user-management.html" class="flex items-center gap-3">
                               <i class="bi bi-people"></i>
                               <span>Users Management</span>
                          </a>
                     </li>
                     <li
-                         class="rounded-sm duration-[200ms] hover:bg-[var(--main)] hover:text-[var(--text-dark)] p-1.5 px-2.5">
+                         class="bg-[var(--main)] text-[var(--text-dark)] rounded-sm duration-[200ms] hover:bg-[var(--main)] hover:text-[var(--text-dark)] p-1.5 px-2.5">
                          <a href="./products-management.html" class="flex items-center gap-3">
                               <i class="bi bi-boxes"></i>
                               <span>Products Management</span>
@@ -121,7 +121,7 @@
           class="text-[85%] md:text-[100%] pb-[30%] fixed z-99 w-[calc(100%-1%)] sm:w-[calc(100%-19rem)] overflow-auto top-[3.8rem] sm:top-[4.3rem] right-1 bottom-1 bg-transparent p-2 sm:p-3 space-y-5">
           <button
                class="bg-indigo-500 ring-2 ring-indigo-500 ring-offset-2 ring-offset-gray-200 hover:ring-indigo-600 hover:bg-indigo-600 text-white px-3 py-1.5 rounded-sm cursor-pointer">Add
-               User</button>
+               Product</button>
           <div class=" bg-white p-3 rounded-sm shadow-sm overflow-x-auto">
                <div class="flex justify-between gap-3">
                     <select
@@ -145,10 +145,11 @@
                                    <input class="accent-indigo-600" type="checkbox" name="" id="">
                               </th>
                               <th class="font-medium">ID</th>
-                              <th class="font-medium">Username</th>
-                              <th class="font-medium">Email</th>
-                              <th class="font-medium">Role</th>
-                              <th class="font-medium">Phone number</th>
+                              <th class="font-medium">Product name</th>
+                              <th class="font-medium">Product category</th>
+                              <th class="font-medium">Cost of production</th>
+                              <th class="font-medium">Price</th>
+                              <th class="font-medium">Stock</th>
                               <th class="font-medium">Actions</th>
                          </tr>
                     </thead>
@@ -187,29 +188,34 @@
 
      <!-- User Management -->
      <script>
+          function Rupiah(data) {
+               return new Intl.NumberFormat("ID-id", { style: "currency", currency: "IDR", maximumFractionDigits: 0 }).format(data)
+          }
           const tbody = document.querySelector("tbody");
           let dataTables = [];
           for (let i = 0; i <= 9; i++) {
                dataTables[i] = {
                     id: `00${i}${i}00`,
-                    name: `User ${i}`,
-                    email: `User${i}@gmail.com`,
-                    role: `${i % 3 == 0 ? "ADMIN" : "USER"}`,
-                    phone: `0812535985${i}`,
+                    name: `Product ${i + 1}`,
+                    category: `${i % 2 === 0 ? "Electronic" : "Domestic"}`,
+                    hpp: `${Rupiah((i + 1) * 10000)}`,
+                    price: `${Rupiah((i + 2) * 10000)}`,
+                    stock: `${i + 12}`
                }
           }
 
           dataTables.forEach(i => {
                tbody.innerHTML +=
-                    `<tr>
+                    `<tr class=" whitespace-nowrap">
                     <td>
                          <input class="accent-indigo-600" type="checkbox" name="" id="">
                     </td>
                     <td>${i.id}</td>
                     <td>${i.name}</td>
-                    <td>${i.email}</td>
-                    <td>${i.role}</td>
-                    <td>${i.phone}</td>
+                    <td>${i.category}</td>
+                    <td>${i.hpp}</td>
+                    <td>${i.price}</td>
+                    <td>${i.stock}</td>
                     <td class="flex gap-2">
                          <button class="bg-red-500 hover:bg-red-600 text-white px-3 p-1 rounded-sm">Delete</button>
                          <button class="bg-green-500 hover:bg-green-600 text-white px-3 p-1 rounded-sm">Edit</button>
@@ -217,8 +223,6 @@
                     </td>
                 </tr>`
           });
-
-
      </script>
 </body>
 
